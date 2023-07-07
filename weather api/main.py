@@ -6,7 +6,8 @@ import requests
 app = Flask(__name__)
 
 # MongoDB Atlas configuration
-MONGO_URI = 'mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority'
+# MONGO_URI = 'mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority'
+MONGO_URI = 'mongodb+srv://shrikantrp00:shrikant@cluster0.2uzxml0.mongodb.net/weather_db?retryWrites=true&w=majority'
 
 # Connect to MongoDB Atlas
 client = MongoClient(MONGO_URI)
@@ -21,7 +22,8 @@ def index():
 
 @app.route('/weather', methods=['POST'])
 def weather_fetch():
-    api_key = 'your api key of weatherstack.com'
+    # api_key = 'your api key of weatherstack.com'
+    api_key = 'dbd216b087d720fa176b2d4620263dc1'
     latitude = request.form['lat']
     longitude = request.form['lon']
     city = request.form['city']
