@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Weather Data for City</h3>
+
+    {% if result %}
+    <table border="1px">
+        <tr>
+            <th>City</th>
+            <th>Average Temperature</th>
+            <th>Max Temperature</th>
+            <th>Min Temperature</th>
+        </tr>
+        <tr>
+            <td>{{ result.city }}</td>
+            <td>{{ result.average_temperature }}</td>
+            <td>{{ result.max_temperature }}</td>
+            <td>{{ result.min_temperature }}</td>
+        </tr>
+    </table>
+    {% else %}
+    <p>No weather data found for the city.</p>
+    {% endif %}
+</body>
+</html>

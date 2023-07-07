@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data </title>
+</head>
+<body>
+    <h3>Weather Report</h3>
+
+    <table border="1px">
+        {% for data in result %}
+        <tr>
+            <td>{{ data['current'] }}</td>
+            <td>{{ data['location'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
