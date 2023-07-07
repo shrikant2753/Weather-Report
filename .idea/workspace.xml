@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc5b811e-8390-42d1-8742-02e67ea8dc47" name="Changes" comment="" />
+    <list default="true" id="fc5b811e-8390-42d1-8742-02e67ea8dc47" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/weather api/templates/weather_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/weather api/templates/weather_data.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
