@@ -18,5 +18,33 @@
         <br>
         <input type="submit">
     </form>
+
+    <h3>Get Weather Data for City</h3>
+    <form action="/weather-data-for-city" method="GET">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br>
+        <br>
+        <input type="submit" value="Get Weather Data">
+    </form>
+
+    <h3>Get Weather Data By filter</h3>
+    <form action="/weather-data_filter" method="GET">
+        city
+        <input type="text" name="city">
+        <br>
+        Start date
+        <input type="text" name="start_date">
+        <br>
+        End Date
+        <input type="text" name="end_date">
+        <br>
+        Min Temperature
+        <input type="text" name="min_temperature">
+        <br>
+        Max Temperature
+        <input type="text" name="max_temperature">
+        <br>
+        <input type="submit" value="Get Weather Data">
+    </form>
 </body>
 </html>

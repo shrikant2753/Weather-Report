@@ -17,6 +17,48 @@
         </tr>
         {% endfor %}
     </table>
-    
+
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Country</th>
+                <th>Region</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Local Time</th>
+                <th>Observation Time</th>
+                <th>Temperature</th>
+                <th>Wind Speed</th>
+                <th>Wind Direction</th>
+                <th>Atmospheric Pressure</th>
+                <th>Humidity</th>
+                <th>Cloud Cover</th>
+                <th>Visibility</th>
+                <th>UV Index</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in data %}
+            <tr>
+                <td>{{ data['City'] }}</td>
+                <td>{{ data['Country'] }}</td>
+                <td>{{ data['Region'] }}</td>
+                <td>{{ data['Latitude'] }}</td>
+                <td>{{ data['Longitude'] }}</td>
+                <td>{{ data['Local time'] }}</td>
+                <td>{{ data['Observation_time'] }}</td>
+                <td>{{ data['Temperature'] }}</td>
+                <td>{{ data['Wind speed'] }}</td>
+                <td>{{ data['Wind direction'] }}</td>
+                <td>{{ data['Atmospheric pressure'] }}</td>
+                <td>{{ data['Humidity'] }}</td>
+                <td>{{ data['Cloudcover'] }}</td>
+                <td>{{ data['Visibility'] }}</td>
+                <td>{{ data['UV index'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
 </body>
 </html>
