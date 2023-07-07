@@ -96,7 +96,7 @@ def get_weather_data():
 def get_weather_data_for_city():
     try:
         # Get query parameter
-        city = request.args.get('city')
+        city = request.args.get('city').capitalize()
 
         # Build aggregation pipeline
         pipeline = [
@@ -128,7 +128,7 @@ def get_weather_data_for_city():
 def get_weather_data_filter():
     try:
         # Extract query parameters
-        location = request.args.get('city')
+        location = request.args.get('city').capitalize()
         start_date = request.args.get('start_date')
         end_date = request.args.get('end_date')
         min_temperature = request.args.get('min_temperature')
@@ -156,6 +156,9 @@ def get_weather_data_filter():
 
         # Retrieve filtered weather data from MongoDB collection
         weather_data = list(collection.find(query_filter))
+        if weather_data is None:
+            return'No data found for %s' %location
+        
         formatted_data = []
         for data in weather_data:
             formatted_data.append(format_data(data))
