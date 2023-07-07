@@ -96,7 +96,7 @@ def get_weather_data():
 def get_weather_data_for_city():
     try:
         # Get query parameter
-        city = request.args.get('city').capitalize()
+        city = request.args.get('city')
 
         # Build aggregation pipeline
         pipeline = [
@@ -128,7 +128,7 @@ def get_weather_data_for_city():
 def get_weather_data_filter():
     try:
         # Extract query parameters
-        location = request.args.get('city').capitalize()
+        location = request.args.get('city')
         start_date = request.args.get('start_date')
         end_date = request.args.get('end_date')
         min_temperature = request.args.get('min_temperature')
