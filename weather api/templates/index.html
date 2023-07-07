@@ -3,51 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weather forcast</title>
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
-    <form action="http://127.0.0.1:5000/weather" method="post">
-        latitude
-        <input type="text" name="lat">
-        longitude
-        <input type="text" name="lon">
-        <h3>or</h3>
+    <div class="container">
+        <h1>Weather Report Application</h1>
 
-        city name
-        <input type="text" name="city">
-        <br>
-        <input type="submit">
-    </form>
+        <form action="http://127.0.0.1:5000/weather" method="post">
+            <label for="lat">Latitude:</label>
+            <input type="text" id="lat" name="lat">
+            <label for="lon">Longitude:</label>
+            <input type="text" id="lon" name="lon">
+            <h3>or</h3>
+            <label for="city">City Name:</label>
+            <input type="text" id="city" name="city">
+            <br>
+            <input type="submit" value="Get Weather">
+        </form>
 
-    <h3>Get Available Weather Data </h3>
-    <a href="http://127.0.0.1:5000/weather-data">data</a>
+        <h3>Get Available Weather Data</h3>
+        <a href="http://127.0.0.1:5000/weather-data">Data</a>
 
-    <h3>Get Weather Data for City</h3>
-    <form action="/weather-data-for-city" method="GET">
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city"><br>
-        <br>
-        <input type="submit" value="Get Weather Data">
-    </form>
+        <h3>Get Weather Data for City</h3>
+        <form action="/weather-data-for-city" method="GET">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city"><br>
+            <br>
+            <input type="submit" value="Get Weather Data">
+        </form>
 
-    <h3>Get Weather Data By filter</h3>
-    <form action="/weather-data_filter" method="GET">
-        city
-        <input type="text" name="city">
-        <br>
-        Start date
-        <input type="text" name="start_date">
-        <br>
-        End Date
-        <input type="text" name="end_date">
-        <br>
-        Min Temperature
-        <input type="text" name="min_temperature">
-        <br>
-        Max Temperature
-        <input type="text" name="max_temperature">
-        <br>
-        <input type="submit" value="Get Weather Data">
-    </form>
+        <h3>Get Weather Data By Filter</h3>
+        <form action="/weather-data_filter" method="GET">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+            <br>
+            <label for="start_date">Start Date:</label>
+            <input type="text" id="start_date" name="start_date">
+            <br>
+            <label for="end_date">End Date:</label>
+            <input type="text" id="end_date" name="end_date">
+            <br>
+            <label for="min_temperature">Min Temperature:</label>
+            <input type="text" id="min_temperature" name="min_temperature">
+            <br>
+            <label for="max_temperature">Max Temperature:</label>
+            <input type="text" id="max_temperature" name="max_temperature">
+            <br>
+            <input type="submit" value="Get Weather Data">
+        </form>
+    </div>
 </body>
 </html>
