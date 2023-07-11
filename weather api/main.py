@@ -1,18 +1,26 @@
 from datetime import datetime
 from flask import Flask, request, render_template
+from dotenv import load_dotenv
 from pymongo import MongoClient
 import requests
+import os
+
+
+# Load environment variables from .env file
+load_dotenv()
+
 
 app = Flask(__name__)
 
 # MongoDB Atlas configuration
-MONGO_URI = 'mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority'
-#<username> = enter your username
-#<password> = enter your cluster password
-#<database-name> = enter database name(here - weather_db)
+# MONGO_URI = 'mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority'
+# MONGO_URI = 'mongodb+srv://shrikantrp00:shrikant@cluster0.2uzxml0.mongodb.net/weather_db?retryWrites=true&w=majority'
+mongo_uri = os.environ.get('MONGO_URI')
+weather_api_key = os.environ.get('WEATHER_API_KEY')
+
 
 # Connect to MongoDB Atlas
-client = MongoClient(MONGO_URI)
+client = MongoClient(mongo_uri)
 db = client.weather_db
 collection = db.weather_data
 
@@ -25,8 +33,7 @@ def index():
 @app.route('/weather', methods=['POST'])
 def weather_fetch():
     # api_key = 'your api key of weatherstack.com'
-    #enter your api key
-    
+    api_key = weather_api_key
     latitude = request.form['lat']
     longitude = request.form['lon']
     city = request.form['city']
@@ -195,5 +202,14 @@ def format_data(data):
     return formated_data
 
 
+# @app.teardown_appcontext
+# def close_connection(exception):
+#     # Close MongoDB connection
+#     client.close()
+
+
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+client.close()
